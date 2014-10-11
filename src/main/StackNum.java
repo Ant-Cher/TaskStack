@@ -6,7 +6,7 @@ import java.util.Deque;
  * Created by Aspera on 05.10.2014.
  * Стэк, который может работать только с числами
  */
-public class StackNum <T extends Number> extends Stack<T> {
+public class StackNum <T extends Number & Comparable> extends Stack<T> {
 
     /**
      * Возращает значение минимального элемента стэка,
