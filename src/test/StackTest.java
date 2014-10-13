@@ -23,7 +23,7 @@ public class StackTest {
     private static Deque<String> dequeString = new ArrayDeque<String>();
 
     private void setDequeInt(Stack stack,int a){    // Этот метод нужен для того,
-        for (int i = 0; i<a ;i++) {                 // чтобы не дублировать код при проверки метода pop().
+        for (int i = 0; i<a ;i++) {                 // чтобы не дублировать код при проверке метода pop().
             stack.add(i);
         }
     }
@@ -53,27 +53,27 @@ public class StackTest {
     public void testPrintEachSecond() throws Exception {
 
         setDequeInt(stack,6);
-        assertEquals(stack.EachSecondValue(stack.getStack()),"1 3 5 ");
+        assertEquals("1 3 5 ",stack.EachSecondValue(stack.getStack()));
 
     }
 
     @Test
     public void testSumOfSymbolsInteger() throws Exception {
 
-        assertEquals(stack.sumOfSymbols(dequeInteger), 190);
+        assertEquals(190,stack.sumOfSymbols(dequeInteger));
 
     }
 
     @Test
     public void testSumOfSymbolsDouble() throws Exception {
 
-        assertEquals(stack.sumOfSymbols(dequeDouble), 300);
+        assertEquals(300,stack.sumOfSymbols(dequeDouble));
 
     }
 
     @Test
     public void testSumOfSymbolsString() throws Exception {
-        assertEquals(stack.sumOfSymbols(dequeString),300);
+        assertEquals(300,stack.sumOfSymbols(dequeString));
 
 
     }
@@ -82,7 +82,7 @@ public class StackTest {
     public void testSetGetStack() throws Exception {
 
         stack.setStack(dequeString);
-        assertEquals(stack.getStack(),dequeString);
+        assertEquals(dequeString,stack.getStack());
 
     }
 
@@ -90,14 +90,14 @@ public class StackTest {
     public void testSetGetStrategyFifo() throws Exception {
 
         stack.setStrategy(fifo);
-        assertEquals(stack.getStrategy(), fifo);
+        assertEquals(fifo,stack.getStrategy());
 
     }
 
     @Test
     public void testSetGetStrategyNull() throws Exception {
 
-        assertEquals(stack.getStrategy(), null);
+        assertEquals(null,stack.getStrategy());
 
     }
 
@@ -106,7 +106,7 @@ public class StackTest {
 
         stack.setStrategy(fifo);
         stack.add("T");
-        assertEquals(stack.pop(), "T");
+        assertEquals("T",stack.pop());
 
     }
 
@@ -114,7 +114,7 @@ public class StackTest {
     public void testPopWithoutStrategy() throws Exception {
 
         stack.setStack(dequeString);
-        assertEquals(stack.pop(), 0);
+        assertEquals(0,stack.pop());
 
     }
 
@@ -125,9 +125,9 @@ public class StackTest {
 
         stack.setStrategy(fifo);
 
-        assertEquals(stack.pop(), 0);
-        assertEquals(stack.pop(), 1);
-        assertEquals(stack.pop(), 2);
+        assertEquals(0, stack.pop());
+        assertEquals(1, stack.pop());
+        assertEquals(2, stack.pop());
 
     }
 
@@ -138,9 +138,9 @@ public class StackTest {
 
         stack.setStrategy(lifo);
 
-        assertEquals(stack.pop(), 99);
-        assertEquals(stack.pop(), 98);
-        assertEquals(stack.pop(), 97);
+        assertEquals(99, stack.pop());
+        assertEquals(99, stack.pop());
+        assertEquals(99, stack.pop());
 
     }
 

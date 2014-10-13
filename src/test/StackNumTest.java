@@ -3,9 +3,7 @@ package test;
 import main.StackNum;
 import org.junit.Before;
 import org.junit.Test;
-import org.omg.PortableInterceptor.NON_EXISTENT;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 public class StackNumTest {
@@ -27,7 +25,7 @@ public class StackNumTest {
     public void testMinEqualValues() throws Exception {
 
         setStackNumElem(stackNum, 5, 5, 5, 5, 5);
-        assertEquals(stackNum.min(),5);
+        assertEquals(5,stackNum.min());
 
     }
 
@@ -35,7 +33,7 @@ public class StackNumTest {
     public void testMinDifferentValues() throws Exception {
 
         setStackNumElem(stackNum, 1, 3, 0, 8, -5);
-        assertEquals(stackNum.min(),-5);
+        assertEquals(-5,stackNum.min());
 
     }
 
@@ -43,7 +41,7 @@ public class StackNumTest {
     public void testMinDoubleValues() throws Exception {
 
         setStackNumElem(stackNum, 1.834, -3.2352, 75, 9., -5.9);
-        assertEquals(stackNum.min(),-5.9);
+        assertEquals(-5.9,stackNum.min());
 
     }
 
@@ -51,14 +49,14 @@ public class StackNumTest {
     public void testMinNaN() throws Exception {
 
         setStackNumElem(stackNum, 1.834,"nan" , 75, 9., -5.9);
-        assertEquals(stackNum.min(),-5.9);
+        assertEquals(-5.9,stackNum.min());
 
     }
     @Test
     public void testMaxEqualValues() throws Exception {
 
         setStackNumElem(stackNum, 5, 5, 5, 5, 5);
-        assertEquals(stackNum.max(),5);
+        assertEquals(5,stackNum.max());
 
     }
 
@@ -66,7 +64,7 @@ public class StackNumTest {
     public void testMaxDifferentValues() throws Exception {
 
         setStackNumElem(stackNum, 1, 3, 0, 8, -5);
-        assertEquals(stackNum.max(),8);
+        assertEquals(8,stackNum.max());
 
     }
 
@@ -74,7 +72,7 @@ public class StackNumTest {
     public void testMaxDoubleValues() throws Exception {
 
         setStackNumElem(stackNum, 1.834, -3.2352, 75.9, 9., -5.9);
-        assertEquals(stackNum.max(),75.9);
+        assertEquals(75.9,stackNum.max());
 
     }
 
@@ -82,7 +80,7 @@ public class StackNumTest {
     public void testMaxNaN() throws Exception {
 
         setStackNumElem(stackNum, 1.834,"nan" , 75, 9., -5.9);
-        assertEquals(stackNum.max(),-5.9);
+        assertEquals(-5.9,stackNum.max());
 
     }
 }
